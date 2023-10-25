@@ -1,0 +1,195 @@
+:root {
+    --color-yel: #dcb31a;
+    --color-dark-light: #2d3548;
+}
+
+@font-face {
+    font-family: "SF-Pro-Display";
+    src: url("./assets/fonts/SF-Pro-Display-Regular.woff2") format("woff2"),
+        url("./assets/fonts/SF-Pro-Display-Regular.woff") format("woff");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "SF-Pro-Display";
+    src: url("./assets/fonts/SF-Pro-Display-Semibold.woff2") format("woff2"),
+        url("./assets/fonts/SF-Pro-Display-Semibold.woff") format("woff");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "SF-Pro-Display";
+    src: url("./assets/fonts/SF-Pro-Display-Regular.otf") format("opentype");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "SF-Pro-Display";
+    src: url("./assets/fonts/SF-Pro-Display-Semibold.otf") format("opentype");
+    font-weight: 600;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+}
+
+.l-wrapper {
+    max-width: 1440px;
+    /* padding: 0 40px; */
+    margin: 0 auto;
+}
+
+.l-section {
+    margin-top: 100px;
+}
+
+.l-banner-animate {
+    max-width: 414px;
+    width: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='320' height='95' viewBox='0 0 320 95' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M320 95H0V0H320V95Z' fill='url(%23paint0_linear_325_452)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_325_452' x1='7.24739' y1='95' x2='301.603' y2='95' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23F6F6F8'/%3E%3Cstop offset='1' stop-color='%23F1F0F5'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
+    height: 95px;
+    background-size: 100%;
+    margin: 0 auto;
+}
+
+.l-banner_first {
+}
+
+.l-banner__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    transform: translateX(-150%);
+    transition: transform 0.3s ease-out;
+    white-space: nowrap;
+}
+
+.l-banner__title .first {
+    color: var(--color-yel);
+    font-size: 21px;
+    font-weight: 800;
+    line-height: normal;
+}
+.l-banner__title .last {
+    color: var(--color-dark-light);
+    font-size: 19px;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: -0.38px;
+    margin-top: -5px;
+}
+
+.l-banner__first-img {
+    position: absolute;
+    right: 40px;
+    max-width: 132px;
+    transform: translateX(150%);
+    transition: transform 0.4s ease-out;
+}
+
+.l-bolt {
+    right: 103px;
+    top: -12%;
+}
+
+.l-banner__js {
+    display: flex;
+    opacity: 0;
+    position: absolute;
+    padding: 0 40px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.l-banner__js.active {
+    opacity: 1;
+    position: relative;
+}
+
+.l-banner__js.active.out-active {
+    animation: fadeIn 0.3s ease-in-out;
+    opacity: 0;
+}
+.l-banner_second .l-banner__title {
+    transform: translateX(-150%);
+}
+
+.l-banner__js.active .l-banner__first-img,
+.l-banner__js.active .l-banner__title {
+    transform: translateX(0);
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.l-banner_second {
+    justify-content: space-between;
+    padding-right: 72px;
+}
+
+.l-bolt__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    padding-bottom: 19px;
+}
+.l-bolt__text span:first-child {
+    font-family: SF Pro Display, sans-serif;
+    color: #464646;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 106.836%; /* 10.684px */
+    letter-spacing: -0.1px;
+    text-decoration: line-through;
+}
+.l-bolt__text span:last-child {
+    font-family: SF Pro Display, sans-serif;
+    background-color: #fbe135;
+    color: var(--color-dark-light);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 106.836%; /* 17.094px */
+    letter-spacing: -0.16px;
+    padding-right: 4px;
+    padding-left: 7px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .l-banner__first-img {
+        right: 20px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .l-banner__js {
+        padding: 0 30px;
+    }
+    .l-banner__first-img {
+        right: 0;
+    }
+}
+@media screen and (max-width: 340px) {
+    .l-banner__js {
+        padding: 0 10px;
+    }
+}
