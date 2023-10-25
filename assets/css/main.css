@@ -58,9 +58,7 @@ body {
     height: 95px;
     background-size: 100%;
     margin: 0 auto;
-}
-
-.l-banner_first {
+    overflow: hidden;
 }
 
 .l-banner__title {
@@ -106,11 +104,13 @@ body {
     opacity: 0;
     position: absolute;
     padding: 0 40px;
-    height: 100%;
-    width: 100%;
+    height: 0;
+    width: 0;
     overflow: hidden;
 }
 .l-banner__js.active {
+    width: 100%;
+    height: 100%;
     opacity: 1;
     position: relative;
 }
@@ -127,6 +127,19 @@ body {
 .l-banner__js.active .l-banner__title {
     transform: translateX(0);
 }
+.l-banner__js.active .l-bolt-block {
+    transform: translateY(0);
+}
+/* .l-banner__js.active .l-teeth__img {
+    right: 20px;
+    top: 4px;
+} */
+
+.add-teeth {
+    right: 20px !important;
+    top: 4px !important;
+    opacity: 1 !important;
+}
 
 .fade-in {
     animation: fadeIn 1s ease-in-out;
@@ -135,6 +148,31 @@ body {
 .l-banner_second {
     justify-content: space-between;
     padding-right: 72px;
+}
+
+.l-bolt-block {
+    position: relative;
+
+    transform: translateY(150%);
+    transition: transform 0.4s ease-out;
+}
+
+.l-bolt__teeth {
+    position: relative;
+    right: 40px;
+    max-width: 102px;
+}
+.l-bolt__img {
+    position: absolute;
+    max-width: 120px;
+    right: -10px;
+    top: -13px;
+}
+.l-teeth__img {
+    opacity: 0;
+    transition: all 0.5s ease;
+    position: absolute;
+    top: -100px;
 }
 
 .l-bolt__text {
@@ -163,6 +201,41 @@ body {
     letter-spacing: -0.16px;
     padding-right: 4px;
     padding-left: 7px;
+}
+
+.l-sale {
+    opacity: 0;
+    left: -1000px;
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 41px;
+    height: 41px;
+    background-image: url("data:image/svg+xml,%3Csvg width='41' height='41' viewBox='0 0 41 41' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.72225 32.2777C7.24817 30.8037 8.22587 27.7089 7.47558 25.8955C6.69779 24.0157 3.84375 22.5027 3.84375 20.4999C3.84375 18.4972 6.69781 16.9843 7.47559 15.1045C8.22588 13.2911 7.24818 10.1963 8.72225 8.72225C10.1963 7.24817 13.2911 8.22587 15.1045 7.47558C16.9843 6.69779 18.4973 3.84375 20.5001 3.84375C22.5028 3.84375 24.0157 6.69781 25.8955 7.47559C27.7089 8.22588 30.8037 7.24818 32.2777 8.72225C33.7518 10.1963 32.7741 13.2911 33.5244 15.1045C34.3022 16.9843 37.1562 18.4973 37.1562 20.5001C37.1562 22.5028 34.3022 24.0157 33.5244 25.8955C32.7741 27.7089 33.7518 30.8037 32.2777 32.2777C30.8037 33.7518 27.7089 32.7741 25.8955 33.5244C24.0157 34.3022 22.5027 37.1562 20.4999 37.1562C18.4972 37.1562 16.9843 34.3022 15.1045 33.5244C13.2911 32.7741 10.1963 33.7518 8.72225 32.2777Z' fill='%23FF1500'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    transition: all .5s ease;
+}
+
+.l-sale.active-sale {
+    opacity: 1;
+    top: 30px;
+    left: -23px;
+}
+
+.l-sale__text {
+    color: #fff;
+    font-family: SF Pro Display, sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.out-active-teeth .l-banner__title {
+    transform: translateX(-200%) !important;
 }
 
 @keyframes fadeIn {
