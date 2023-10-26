@@ -34,13 +34,13 @@ async function animateBanner(index) {
     await delay(1000);
 
     teeth.classList.add("add-teeth");
-    await delay(1000);
+    await delay(3000);
 
     banners[nextIndex].classList.add("out-active-teeth");
     await delay(100);
 
     sale.classList.add("active-sale");
-    await delay(2000);
+    await delay(3000);
 
     banners[nextIndex].classList.add("out-active");
     await delay(1000);
