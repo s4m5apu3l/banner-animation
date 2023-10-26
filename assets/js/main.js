@@ -23,20 +23,19 @@ document.addEventListener("DOMContentLoaded", function () {
                     setTimeout(() => {
                         sale.classList.add("active-sale");
                         setTimeout(() => {
-                            banners[nextIndex].classList.add("out-active");
-                            setTimeout(() => {
-                                banners[nextIndex].classList.remove(
-                                    "out-active"
-                                );
-                                banners[nextIndex].classList.remove("active");
-                                banners[nextIndex].classList.remove(
-                                    "out-active-teeth"
-                                );
-                                teeth.classList.remove("add-teeth");
-                                sale.classList.remove("active-sale");
-                                showBanner(0);
-                            }, 1000);
-                            // showBanner(nextIndex);
+                            // banners[nextIndex].classList.add("out-active");
+                            // setTimeout(() => {
+                            //     banners[nextIndex].classList.remove(
+                            //         "out-active"
+                            //     );
+                            //     banners[nextIndex].classList.remove("active");
+                            //     banners[nextIndex].classList.remove(
+                            //         "out-active-teeth"
+                            //     );
+                            //     teeth.classList.remove("add-teeth");
+                            //     sale.classList.remove("active-sale");
+                            //     showBanner(0);
+                            // }, 1000);
                         }, 2000); 
                     }, 100);
                 }, 2000);

@@ -323,6 +323,12 @@ body {
     .l-banner__first-img {
         right: 0;
     }
+    .out-active-teeth {
+        transform: translateX(-50%) !important;
+    }
+    .out-active-teeth .l-bolt__link {
+        right: -42%;
+    }
 }
 @media screen and (max-width: 340px) {
     .l-banner__js {
